@@ -24,10 +24,10 @@
 // the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);//pin 2
-  pinMode(3, OUTPUT);
+  pinMode(15, OUTPUT);//pin 2
+  pinMode(16, OUTPUT);
   pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 // the loop function runs over and over again forever
@@ -35,29 +35,29 @@ void loop() {
   //DESAFIO EN CLASE
   //2. Encuentra el parpadeo más rápido que el ojo pueda detectar 
   
-  digitalWrite(LED_BUILTIN, HIGH); 
-  digitalWrite(3, LOW); 
+  digitalWrite(15, HIGH); 
+  digitalWrite(LED_BUILTIN, LOW); 
   digitalWrite(4, LOW); 
-  digitalWrite(5, LOW);   
+  digitalWrite(16, LOW);   
   delay(500);                      
-   digitalWrite(LED_BUILTIN, LOW); 
-  digitalWrite(3, HIGH); 
+   digitalWrite(15, LOW); 
+  digitalWrite(LED_BUILTIN, HIGH); 
   digitalWrite(4, LOW); 
-  digitalWrite(5, LOW); 
+  digitalWrite(16, LOW); 
   delay(500);  
-   digitalWrite(LED_BUILTIN, LOW); 
-  digitalWrite(3, LOW); 
+   digitalWrite(15, LOW); 
+  digitalWrite(LED_BUILTIN, LOW); 
   digitalWrite(4, HIGH); 
-  digitalWrite(5, LOW);   
+  digitalWrite(16, LOW);   
   delay(500);  
-   digitalWrite(LED_BUILTIN, LOW); 
-  digitalWrite(3, LOW); 
+   digitalWrite(15, LOW); 
+  digitalWrite(LED_BUILTIN, LOW); 
   digitalWrite(4, LOW); 
-  digitalWrite(5, HIGH);  
+  digitalWrite(16, HIGH);  
   delay(500);  
-   digitalWrite(LED_BUILTIN, LOW); 
-  digitalWrite(3, LOW); 
+   digitalWrite(15, LOW); 
+  digitalWrite(LED_BUILTIN, LOW); 
   digitalWrite(4, LOW); 
-  digitalWrite(5, LOW);
+  digitalWrite(16, LOW);
   delay(500);                   
 }

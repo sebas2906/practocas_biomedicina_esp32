@@ -1,12 +1,16 @@
 //https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/ledc.html
 // the number of the LED pin
-const int ledPin = 15;  // 16 corresponds to GPIO16
+const int ledPin = 2;  // 16 corresponds to GPIO16
 
 // setting PWM properties
 const int freq = 5000;
-const int ledChannel = 0;
+const int ledChannel = 2;
 const int resolution = 8;
- 
+
+int sensorPin = 33;    // select the input pin for the potentiometer
+int sensorValue = 0;  // variable to store the value coming from the sensor
+int dutyCycle = 0;
+
 void setup(){
   // configure LED PWM functionalitites
   ledcSetup(ledChannel, freq, resolution);
@@ -16,17 +20,14 @@ void setup(){
 }
  
 void loop(){
+  sensorValue = analogRead(sensorPin);
+
   // increase the LED brightness
-  for(int dutyCycle = 0; dutyCycle <= 255; dutyCycle++){   
     // changing the LED brightness with PWM
+    dutyCycle=map(sensorValue, 0, 4096, 0, 255);
     ledcWrite(ledChannel, dutyCycle);
     delay(15);
-  }
+  
 
-  // decrease the LED brightness
-  for(int dutyCycle = 255; dutyCycle >= 0; dutyCycle--){
-    // changing the LED brightness with PWM
-    ledcWrite(ledChannel, dutyCycle);   
-    delay(15);
-  }
+ 
 }

@@ -1,11 +1,11 @@
 //https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/ledc.html
 // the number of the LED pin
-const int ledPin_0 = 16;  // 16 corresponds to GPIO16
-const int ledPin_1 = 17;  // 16 corresponds to GPIO16
+const int ledPin_0 = 2;  // 16 corresponds to GPIO16
+const int ledPin_1 = 4;  // 16 corresponds to GPIO16
 
 // setting PWM properties
 const int freq = 5000;
-const int ledChannel_0 = 0;
+const int ledChannel_0 = 2;
 const int ledChannel_1 = 0;
 const int resolution = 8;
  

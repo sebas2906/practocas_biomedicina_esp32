@@ -21,7 +21,7 @@
 
   https://www.arduino.cc/en/Tutorial/BuiltInExamples/Blink
 */
-int parpadeo_maximo_perceptible=(1/20)*1000//segun estudios, el parpadeo minimo perceptible se acerca a los 20Hz
+int parpadeo_maximo_perceptible=(1.0/40.0)*1000;//segun estudios, el parpadeo minimo perceptible se acerca a los 20Hz
 // the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
