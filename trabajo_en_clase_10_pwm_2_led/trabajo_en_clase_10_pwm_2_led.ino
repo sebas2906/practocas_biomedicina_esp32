@@ -1,7 +1,11 @@
+/**
+ * Incrementa y decrementa el brillo de 2 leds a la vez
+ * 
+ */
+
 //https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/ledc.html
-// the number of the LED pin
-const int ledPin_0 = 2;  // 16 corresponds to GPIO16
-const int ledPin_1 = 4;  // 16 corresponds to GPIO16
+const int ledPin_0 = 2;
+const int ledPin_1 = 4;
 
 // setting PWM properties
 const int freq = 5000;
@@ -20,17 +24,15 @@ void setup(){
 }
  
 void loop(){
-  // increase the LED brightness
+  // incrementa el brillo
   for(int dutyCycle = 0; dutyCycle <= 255; dutyCycle++){   
-    // changing the LED brightness with PWM
     ledcWrite(ledChannel_0, dutyCycle);
     ledcWrite(ledChannel_1, 255-dutyCycle);
     delay(15);
   }
 
-  // decrease the LED brightness
+  // decrementa el brillo
   for(int dutyCycle = 255; dutyCycle >= 0; dutyCycle--){
-    // changing the LED brightness with PWM
     ledcWrite(ledChannel_0, dutyCycle);  
     ledcWrite(ledChannel_1, 255-dutyCycle); 
     delay(15);

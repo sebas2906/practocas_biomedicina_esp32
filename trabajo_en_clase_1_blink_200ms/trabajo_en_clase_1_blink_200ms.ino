@@ -1,16 +1,15 @@
 
-// the setup function runs once when you press reset or power the board
+// configuraciones iniciales
 void setup() {
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);//configurando el led integrado de la placa de desarrollo como salida
 }
 
-// the loop function runs over and over again forever
+// superloop
 void loop() {
   //DESAFIO EN CLASE
   //1. Implementar parpadeo con intervalo de 200ms
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(200);                       // wait for a second 
+  digitalWrite(LED_BUILTIN, HIGH);   // enciende led
+  delay(1000);                       // esperar de un segundo
+  digitalWrite(LED_BUILTIN, LOW);    // apagar led
+  delay(200);                       // esperar un segundo
 }

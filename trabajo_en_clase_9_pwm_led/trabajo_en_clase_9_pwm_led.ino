@@ -1,31 +1,29 @@
-//https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/ledc.html
-// the number of the LED pin
+
 const int ledPin = 15;  // 16 corresponds to GPIO16
 
-// setting PWM properties
+// propiedades de PWM
 const int freq = 5000;
 const int ledChannel = 0;
 const int resolution = 8;
  
 void setup(){
-  // configure LED PWM functionalitites
+  //LEDC modulo interno PWM del ESP32 
+  //https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/ledc.html
   ledcSetup(ledChannel, freq, resolution);
   
-  // attach the channel to the GPIO to be controlled
+  // asocia el canal con el pin del led
   ledcAttachPin(ledPin, ledChannel);
 }
  
 void loop(){
-  // increase the LED brightness
+  // aumenta el brilllo del led
   for(int dutyCycle = 0; dutyCycle <= 255; dutyCycle++){   
-    // changing the LED brightness with PWM
     ledcWrite(ledChannel, dutyCycle);
     delay(15);
   }
 
-  // decrease the LED brightness
+  // decrementa el brillpo del led
   for(int dutyCycle = 255; dutyCycle >= 0; dutyCycle--){
-    // changing the LED brightness with PWM
     ledcWrite(ledChannel, dutyCycle);   
     delay(15);
   }
